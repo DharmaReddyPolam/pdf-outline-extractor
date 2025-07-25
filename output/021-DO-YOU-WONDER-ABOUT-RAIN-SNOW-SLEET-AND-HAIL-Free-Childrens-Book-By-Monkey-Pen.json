@@ -1,0 +1,40 @@
+{
+  "title": "Your Story",
+  "outline": [
+    {
+      "level": "H3",
+      "text": "The Water Cycle has 4 parts.",
+      "page": 13
+    },
+    {
+      "level": "H2",
+      "text": "Evaporation",
+      "page": 14
+    },
+    {
+      "level": "H2",
+      "text": "Condensation",
+      "page": 17
+    },
+    {
+      "level": "H2",
+      "text": "Precipitation",
+      "page": 18
+    },
+    {
+      "level": "H2",
+      "text": "Collection",
+      "page": 23
+    },
+    {
+      "level": "H1",
+      "text": "Your Story",
+      "page": 26
+    },
+    {
+      "level": "H1",
+      "text": "Book!",
+      "page": 26
+    }
+  ]
+}

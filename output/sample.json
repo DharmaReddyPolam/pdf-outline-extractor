@@ -1,0 +1,20 @@
+{
+  "title": "Introduction (size 20)",
+  "outline": [
+    {
+      "level": "H1",
+      "text": "Introduction (size 20)",
+      "page": 1
+    },
+    {
+      "level": "H1",
+      "text": "What is AI? (size 16)",
+      "page": 1
+    },
+    {
+      "level": "H1",
+      "text": "History of AI (size 14)",
+      "page": 1
+    }
+  ]
+}
