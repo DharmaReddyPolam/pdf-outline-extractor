@@ -10,7 +10,6 @@ def extract_headings(pdf_path):
     font_sizes = {}
     heading_candidates = []
 
-    # First pass: collect all spans with font sizes and counts
     for page_num, page in enumerate(doc, start=1):
         blocks = page.get_text("dict")["blocks"]
         for block in blocks:
@@ -23,7 +22,6 @@ def extract_headings(pdf_path):
                         if len(text) == 0:
                             continue
 
-                        # Collect font size stats
                         font_sizes[size] = font_sizes.get(size, 0) + 1
 
                         heading_candidates.append({
@@ -34,7 +32,6 @@ def extract_headings(pdf_path):
                             "bbox": span["bbox"],
                         })
 
-    # Determine top 3 largest font sizes → H1, H2, H3
     sorted_sizes = sorted(font_sizes.items(), key=lambda x: -x[0])
     size_to_level = {}
     for i, (size, _) in enumerate(sorted_sizes[:3]):
@@ -45,11 +42,11 @@ def extract_headings(pdf_path):
         size = item["font_size"]
         text = item["text"]
         flags = item["flags"]
-        y_pos = item["bbox"][1]  # vertical position on page
+        y_pos = item["bbox"][1]  
 
         is_bold = bool(flags & 2)
         is_upper = text.isupper()
-        is_top = y_pos < 200  # appears near top of page
+        is_top = y_pos < 200  
         size_ranked = size in size_to_level
 
         score = 0
@@ -58,7 +55,7 @@ def extract_headings(pdf_path):
         if is_upper: score += 1
         if is_top: score += 1
 
-        return score >= 2  # at least 2 signals must match
+        return score >= 2 
 
     outline = []
     title = None
