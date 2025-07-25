@@ -1,6 +1,6 @@
 import os
 import json
-import fitz  # PyMuPDF
+import fitz
 
 INPUT_DIR = "input"
 OUTPUT_DIR = "output"
